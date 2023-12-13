@@ -95,18 +95,18 @@ local opts = {
                     prefix = "self",
                 },
                 cargo = {
-                    features = { "ssr" },
+--                    features = { "ssr" },
                     loadOutDirsFromCheck = true,
                     buildScripts = {
                         enable = true,
                     }
                 },
                 check = {
-                    features = { "ssr" },
+--                    features = { "ssr" },
                 },
                 -- Add clippy lints for Rust.
                 checkOnSave = {
-                    features = { "ssr" },
+--                    features = { "ssr" },
                     command = "clippy",
                     extraArgs = { "--no-deps" },
                 },
