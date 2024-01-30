@@ -71702,6 +71702,8 @@
 	</dict>
 	<key>Default Bookmark Guid</key>
 	<string>F4CDF324-2FFD-40BD-A703-C42785E424B2</string>
+	<key>DimInactiveSplitPanes</key>
+	<false/>
 	<key>HapticFeedbackForEsc</key>
 	<false/>
 	<key>HotkeyMigratedFromSingleToMulti</key>
@@ -72032,13 +72034,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.61960786581039429</real>
+				<real>1</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.58039218187332153</real>
+				<real>1</real>
 				<key>Red Component</key>
-				<real>0.54509806632995605</real>
+				<real>1</real>
 			</dict>
 			<key>Guid</key>
 			<string>F4CDF324-2FFD-40BD-A703-C42785E424B2</string>
@@ -72410,7 +72412,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Transparency</key>
-			<real>0.0</real>
+			<real>0.31488530585106383</real>
 			<key>Unlimited Scrollback</key>
 			<false/>
 			<key>Use Bold Font</key>
@@ -72476,5 +72478,9 @@
 	<false/>
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
+	<key>kCPKSelectionViewPreferredModeKey</key>
+	<integer>0</integer>
+	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
+	<false/>
 </dict>
 </plist>
