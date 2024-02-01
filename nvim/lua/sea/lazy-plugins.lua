@@ -68,7 +68,7 @@ require('lazy').setup({
   },
 
   -- Useful plugin to show you pending keybinds.
-  { 'folke/which-key.nvim',  opts = {} },
+  { 'folke/which-key.nvim', opts = {} },
   {
     -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
@@ -144,28 +144,30 @@ require('lazy').setup({
     },
   },
 
-  {
-    -- Theme inspired by Atom
-    'navarasu/onedark.nvim',
-    priority = 1000,
-    config = function()
-      vim.cmd.colorscheme 'onedark'
-    end,
-  },
+  -- {
+  --   -- Theme inspired by Atom
+  --   'navarasu/onedark.nvim',
+  --   priority = 1000,
+  --   config = function()
+  --     vim.cmd.colorscheme 'onedark'
+  --   end,
+  -- },
+  --
+  -- {
+  --   -- Set lualine as statusline
+  --   'tanvirtin/monokai.nvim',
+  --   -- See `:help lualine.txt`
+  --   -- opts = {
+  --   --   options = {
+  --   --     icons_enabled = false,
+  --   --     theme = 'onedark',
+  --   --     component_separators = '|',
+  --   --     section_separators = '',
+  --   --   },
+  --   -- },
+  -- },
 
-  {
-    -- Set lualine as statusline
-    'tanvirtin/monokai.nvim',
-    -- See `:help lualine.txt`
-    -- opts = {
-    --   options = {
-    --     icons_enabled = false,
-    --     theme = 'onedark',
-    --     component_separators = '|',
-    --     section_separators = '',
-    --   },
-    -- },
-  },
+  { "catppuccin/nvim",      name = "catppuccin", priority = 1000 },
 
   {
     -- Add indentation guides even on blank lines
