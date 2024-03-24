@@ -1,26 +1,17 @@
-# Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+ZSH_THEME="robbyrussell"
+DISABLE_MAGIC_FUNCTIONS="true"
+DISABLE_LS_COLORS="true"
+ENABLE_CORRECTION="false"
+plugins=(git macos zsh-autosuggestions)
 source $ZSH/oh-my-zsh.sh
 export LANG=en_US.UTF-8
 export EDITOR='vim'
-plugins=(git macos zsh-autosuggestions)
 
-
-# Reevaluate the prompt string each time it's displaying a prompt
-setopt prompt_subst
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
-autoload bashcompinit && bashcompinit
-autoload -Uz compinit
-compinit
-
-
-bindkey '^w' autosuggest-execute
-bindkey '^e' autosuggest-accept
-bindkey '^u' autosuggest-toggle
-bindkey '^L' vi-forward-word
-bindkey '^k' up-line-or-search
-bindkey '^j' down-line-or-search
-
+# bindkey '^L' vi-forward-word
+# bindkey '^k' up-line-or-search
+# bindkey '^j' down-line-or-search
+#
 # You may need to manually set your language environment
 
 alias la="tree -L 2"

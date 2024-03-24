@@ -167,7 +167,6 @@ require('lazy').setup({
   --   -- },
   -- },
 
-  -- { "catppuccin/nvim",      name = "catppuccin", priority = 1000 },
 
   {
     -- Add indentation guides even on blank lines
@@ -217,19 +216,17 @@ require('lazy').setup({
     }
   },
   {
-    -- Project tree
     'nvim-tree/nvim-web-devicons',
     dependencies = {
     }
   },
   {
-    -- Project tree
     'voldikss/vim-floaterm',
     dependencies = {
     }
   },
   {
-    -- status line
+    -- Status line
     'vim-airline/vim-airline',
     dependencies = {
     }
@@ -241,21 +238,15 @@ require('lazy').setup({
       'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
     },
     init = function() vim.g.barbar_auto_setup = false end,
-    opts = {
-      -- lazy.nvim will automatically call setup for you. put your options here, anything missing will use the default:
-      -- animation = true,
-      -- insert_at_start = true,
-      -- …etc.
-    },
-    version = '^1.0.0', -- optional: only update when a new 1.x version is released
+    version = '^1.0.0',
   },
   {
     'tpope/vim-eunuch',
   },
-  { "ellisonleao/gruvbox.nvim", priority = 1000, config = true },
   { "David-Kunz/gen.nvim" },
-  -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
-  --       These are some example plugins that I've included in the kickstart repository.
-  --       Uncomment any of the lines below to enable them.
+  -- Themes
+  { "ellisonleao/gruvbox.nvim", priority = 1000,     config = true },
+  { "catppuccin/nvim",          name = "catppuccin", priority = 1000 },
+  -- Custom
   require 'sea.autoformat',
 }, {})

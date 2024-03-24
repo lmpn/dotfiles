@@ -47,7 +47,7 @@ require('sea.mason')
 require('sea.cmp')
 require('sea.tree')
 require('sea.remap')
-require('sea.gruvbox')
+require('sea.theme')
 require('sea.llm')
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et

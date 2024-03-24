@@ -1,7 +1,7 @@
 local llm = require('gen')
 
 llm.setup({
-  model = "starcoder2",   -- The default model to use.
+  model = "nous-hermes2", -- The default model to use.
   host = "localhost",     -- The host running the Ollama service.
   port = "11434",         -- The port on which the Ollama service is listening.
   display_mode = "float", -- The display mode. Can be "float" or "split".
@@ -21,10 +21,3 @@ llm.setup({
   -- list_models = '<omitted lua function>', -- Retrieves a list of model names
   debug = false -- Prints errors and the command which is run.
 })
-
-llm.prompts['GoCG'] = { prompt = "Transform the following text into Golang code: $text", replace = true }
-llm.prompts['Fix_Code'] = {
-  prompt = "Fix the following code. Only ouput the result in format ```$filetype\n...\n```:\n```$filetype\n$text\n```",
-  replace = true,
-  extract = "```$filetype\n(.-)```"
-}
