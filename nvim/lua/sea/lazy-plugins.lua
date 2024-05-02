@@ -209,22 +209,22 @@ require('lazy').setup({
     },
     build = ':TSUpdate',
   },
-  {
-    -- Project tree
-    'nvim-tree/nvim-tree.lua',
-    dependencies = {
-    }
-  },
-  {
-    'nvim-tree/nvim-web-devicons',
-    dependencies = {
-    }
-  },
-  {
-    'voldikss/vim-floaterm',
-    dependencies = {
-    }
-  },
+  -- {
+  --   -- Project tree
+  --   'nvim-tree/nvim-tree.lua',
+  --   dependencies = {
+  --   }
+  -- },
+  -- {
+  --   'nvim-tree/nvim-web-devicons',
+  --   dependencies = {
+  --   }
+  -- },
+  -- {
+  --   'voldikss/vim-floaterm',
+  --   dependencies = {
+  --   }
+  -- },
   {
     -- Status line
     'vim-airline/vim-airline',
@@ -243,7 +243,27 @@ require('lazy').setup({
   {
     'tpope/vim-eunuch',
   },
-  { "David-Kunz/gen.nvim" },
+  {
+    "David-Kunz/gen.nvim",
+    keys = {
+      {
+        "<leader>cg",
+        "<cmd>Gen<cr>",
+        mode = "n",
+        noremap = true,
+        silent = true,
+        desc = "LLM tools",
+      },
+      {
+        "<leader>cg",
+        ":'<,'>Gen<cr>",
+        mode = "v",
+        noremap = true,
+        silent = true,
+        desc = "LLM tools",
+      },
+    },
+  },
   -- Themes
   { "ellisonleao/gruvbox.nvim", priority = 1000,     config = true },
   { "catppuccin/nvim",          name = "catppuccin", priority = 1000 },
