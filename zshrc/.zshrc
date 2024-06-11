@@ -3,7 +3,7 @@ ZSH_THEME="robbyrussell"
 DISABLE_MAGIC_FUNCTIONS="true"
 DISABLE_LS_COLORS="true"
 ENABLE_CORRECTION="false"
-plugins=(git macos zsh-autosuggestions)
+plugins=(git macos zsh-autosuggestions vi-mode)
 source $ZSH/oh-my-zsh.sh
 export LANG=en_US.UTF-8
 export EDITOR='vim'
@@ -78,3 +78,5 @@ cx() { cd "$@" && l; }
 fcd() { cd "$(find . -type d -not -path '*/.*' | fzf)" && l; }
 f() { echo "$(find . -type f -not -path '*/.*' | fzf)" | pbcopy }
 fv() { nvim "$(find . -type f -not -path '*/.*' | fzf)" }
+
+export PATH="$PATH:~/.mybin"
