@@ -72041,13 +72041,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.37962067127227783</real>
+				<real>0.34816491603851318</real>
 				<key>Color Space</key>
-				<string>Calibrated</string>
+				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.43934443593025208</real>
+				<real>0.34113329648971558</real>
 				<key>Red Component</key>
-				<real>0.49889594316482544</real>
+				<real>0.34113359451293945</real>
 			</dict>
 			<key>Ansi 9 Color</key>
 			<dict>

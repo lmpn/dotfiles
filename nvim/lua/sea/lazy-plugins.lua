@@ -216,6 +216,12 @@ require('lazy').setup({
   -- Themes
   { "ellisonleao/gruvbox.nvim", priority = 1000,     config = true },
   { "catppuccin/nvim",          name = "catppuccin", priority = 1000 },
+  -- Diagnostics
+  {
+    "folke/trouble.nvim",
+    opts = {}, -- for default options, refer to the configuration section for custom setup.
+    cmd = "Trouble",
+  },
   -- Custom
   require 'sea.autoformat',
 }, {})
