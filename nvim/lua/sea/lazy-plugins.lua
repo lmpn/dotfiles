@@ -26,15 +26,17 @@ require('lazy').setup({
 
   -- Git related plugins
   'tpope/vim-fugitive',
+
+  -- Open GitHub URLs, omni-completion for issues, commits, etc
   'tpope/vim-rhubarb',
 
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
 
-  -- NOTE: This is where your plugins related to LSP can be installed.
-  --  The configuration is done below. Search for lspconfig to find it below.
+  -- LSP Configuration & Plugins
   {
-    -- LSP Configuration & Plugins
+    -- NOTE: This is where your plugins related to LSP can be installed.
+    --  The configuration is done below. Search for lspconfig to find it below.
     'neovim/nvim-lspconfig',
     dependencies = {
       -- Automatically install LSPs to stdpath for neovim
@@ -50,8 +52,8 @@ require('lazy').setup({
     },
   },
 
+  -- Autocompletion
   {
-    -- Autocompletion
     'hrsh7th/nvim-cmp',
     dependencies = {
       -- Snippet Engine & its associated nvim-cmp source
@@ -69,8 +71,9 @@ require('lazy').setup({
 
   -- Useful plugin to show you pending keybinds.
   { 'folke/which-key.nvim',  opts = {} },
+
+  -- Adds git related signs to the gutter, as well as utilities for managing changes
   {
-    -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
     opts = {
       -- See `:help gitsigns.txt`
@@ -144,32 +147,8 @@ require('lazy').setup({
     },
   },
 
-  -- {
-  --   -- Theme inspired by Atom
-  --   'navarasu/onedark.nvim',
-  --   priority = 1000,
-  --   config = function()
-  --     vim.cmd.colorscheme 'onedark'
-  --   end,
-  -- },
-  --
-  -- {
-  --   -- Set lualine as statusline
-  --   'tanvirtin/monokai.nvim',
-  --   -- See `:help lualine.txt`
-  --   -- opts = {
-  --   --   options = {
-  --   --     icons_enabled = false,
-  --   --     theme = 'onedark',
-  --   --     component_separators = '|',
-  --   --     section_separators = '',
-  --   --   },
-  --   -- },
-  -- },
-
-
+  -- Add indentation guides even on blank lines
   {
-    -- Add indentation guides even on blank lines
     'lukas-reineke/indent-blankline.nvim',
     -- Enable `lukas-reineke/indent-blankline.nvim`
     -- See `:help ibl`
@@ -201,69 +180,39 @@ require('lazy').setup({
     },
   },
 
+  -- Highlight, edit, and navigate code
   {
-    -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
     dependencies = {
       'nvim-treesitter/nvim-treesitter-textobjects',
     },
     build = ':TSUpdate',
   },
-  -- {
-  --   -- Project tree
-  --   'nvim-tree/nvim-tree.lua',
-  --   dependencies = {
-  --   }
-  -- },
-  -- {
-  --   'nvim-tree/nvim-web-devicons',
-  --   dependencies = {
-  --   }
-  -- },
-  -- {
-  --   'voldikss/vim-floaterm',
-  --   dependencies = {
-  --   }
-  -- },
+
   {
     -- Status line
     'vim-airline/vim-airline',
     dependencies = {
     }
   },
+
   {
     'romgrk/barbar.nvim',
     dependencies = {
       'lewis6991/gitsigns.nvim',     -- OPTIONAL: for git status
       'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
     },
-    init = function() vim.g.barbar_auto_setup = false end,
+    -- init = function() vim.g.barbar_auto_setup = false end,
     version = '^1.0.0',
   },
+
   {
     'tpope/vim-eunuch',
   },
-  {
-    "David-Kunz/gen.nvim",
-    keys = {
-      {
-        "<leader>cg",
-        "<cmd>Gen<cr>",
-        mode = "n",
-        noremap = true,
-        silent = true,
-        desc = "LLM tools",
-      },
-      {
-        "<leader>cg",
-        ":'<,'>Gen<cr>",
-        mode = "v",
-        noremap = true,
-        silent = true,
-        desc = "LLM tools",
-      },
-    },
-  },
+
+  -- AI Plugin
+  { "David-Kunz/gen.nvim" },
+
   -- Themes
   { "ellisonleao/gruvbox.nvim", priority = 1000,     config = true },
   { "catppuccin/nvim",          name = "catppuccin", priority = 1000 },
