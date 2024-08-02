@@ -81,6 +81,15 @@ local servers = {
       -- diagnostics = { disable = { 'missing-fields' } },
     },
   },
+  gopls = {
+    analyses = {
+      unusedparams = true,
+    },
+    completeUnimported = true,
+    staticcheck = true,
+    gofumpt = true,
+    buildFlags = { "-tags=testutils" },
+  }
 }
 
 -- Setup neovim lua configuration

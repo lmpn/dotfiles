@@ -13,6 +13,11 @@ local function telescope_live_grep_open_files()
   }
 end
 
+local function current_file()
+  local current_file = vim.api.nvim_buf_get_name(0)
+  return current_file
+end
+
 local barbar_map = vim.api.nvim_set_keymap
 local key_map = vim.keymap.set
 
@@ -50,6 +55,11 @@ key_map('n', '<leader>/', telescope_current_buffer_fzf, { desc = '[/] Fuzzily se
 key_map('n', '<leader>s/', telescope_live_grep_open_files, { desc = '[S]earch [/] in Open Files' })
 key_map('n', '<leader>ss', require('telescope.builtin').builtin, { desc = '[S]earch [S]elect Telescope' })
 key_map('n', '<leader>gf', require('telescope.builtin').git_files, { desc = 'Search [G]it [F]iles' })
+key_map('n', "<leader>gd", function()
+    vim.cmd("Git log -p " .. current_file())
+    vim.cmd.normal("<C-w>l")
+  end,
+  { desc = "[G]it view last change" })
 key_map('n', '<leader>sf', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
 key_map('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = '[S]earch [H]elp' })
 key_map('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
