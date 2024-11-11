@@ -49,7 +49,7 @@ key_map('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic
 key_map('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
 key_map('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
 key_map('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
-key_map('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
+key_map('n', '<leader>ro', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
 key_map('n', '<leader><space>', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })
 key_map('n', '<leader>/', telescope_current_buffer_fzf, { desc = '[/] Fuzzily search in current buffer' })
 key_map('n', '<leader>s/', telescope_live_grep_open_files, { desc = '[S]earch [/] in Open Files' })
@@ -102,3 +102,16 @@ barbar_map('n', '<Space>bw', '<cmd>BufferOrderByWindowNumber<CR>',
   { desc = 'Sort by window number', noremap = true, silent = true })
 barbar_map('n', '<leader>cg', '<cmd>Gen<cr>', { noremap = true, silent = true, desc = "LLM tools" })
 barbar_map('v', '<leader>cg', '<cmd>Gen<cr>', { noremap = true, silent = true, desc = "LLM tools" })
+key_map("n", "<Leader>dl", "<cmd>lua require'dap'.step_into()<CR>", { desc = "Debugger step into" })
+key_map("n", "<Leader>dj", "<cmd>lua require'dap'.step_over()<CR>", { desc = "Debugger step over" })
+key_map("n", "<Leader>dk", "<cmd>lua require'dap'.step_out()<CR>", { desc = "Debugger step out" })
+key_map("n", "<Leader>dc>", "<cmd>lua require'dap'.continue()<CR>", { desc = "Debugger continue" })
+key_map("n", "<Leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<CR>", { desc = "Debugger toggle breakpoint" })
+key_map(
+  "n",
+  "<Leader>dd",
+  "<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>",
+  { desc = "Debugger set conditional breakpoint" }
+)
+key_map("n", "<Leader>de", "<cmd>lua require'dap'.terminate()<CR>", { desc = "Debugger reset" })
+key_map("n", "<Leader>dr", "<cmd>lua require'dap'.run_last()<CR>", { desc = "Debugger run last" })
