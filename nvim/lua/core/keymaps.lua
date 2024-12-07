@@ -67,14 +67,14 @@ end
 
 -- called by init
 local trouble_keymaps = function()
-  key_map('n', "<leader>xx", "<cmd>Trouble diagnostics toggle<cr>", { desc = "Diagnostics (Trouble)" })
-  key_map('n', "<leader>xX", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+  key_map('n', "<leader>xx", "<cmd>Trouble diagnostics toggle win.position=right<cr>", { desc = "Diagnostics (Trouble)" })
+  key_map('n', "<leader>xX", "<cmd>Trouble diagnostics toggle filter.buf=0 win.position=right<cr>",
     { desc = "Buffer Diagnostics (Trouble)", })
   key_map('n', "<leader>cs", "<cmd>Trouble symbols toggle focus=false<cr>", { desc = "Symbols (Trouble)", })
   key_map('n', "<leader>cl", "<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
     { desc = "LSP Definitions / references / ... (Trouble)", })
-  key_map('n', "<leader>xL", "<cmd>Trouble loclist toggle<cr>", { desc = "Location List (Trouble)" })
-  key_map('n', "<leader>xQ", "<cmd>Trouble qflist toggle<cr>", { desc = "Quickfix List (Trouble)" })
+  key_map('n', "<leader>xL", "<cmd>Trouble loclist toggle<cr> win.position=right", { desc = "Location List (Trouble)" })
+  key_map('n', "<leader>xQ", "<cmd>Trouble qflist toggle<cr> win.position=right", { desc = "Quickfix List (Trouble)" })
 end
 
 -- called by init

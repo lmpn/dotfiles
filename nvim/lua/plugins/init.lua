@@ -24,7 +24,7 @@ return {
     "wellle/context.vim",
 
     -- Diagnostics; noconf
-    { "folke/trouble.nvim", cmd = "Trouble", },
+    { "folke/trouble.nvim", opts = {}, cmd = "Trouble", },
 
     -- Command fzf; noconf
     {
