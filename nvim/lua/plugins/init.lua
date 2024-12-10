@@ -24,7 +24,12 @@ return {
     "wellle/context.vim",
 
     -- Diagnostics; noconf
-    { "folke/trouble.nvim", opts = {}, cmd = "Trouble", },
+    {
+        "folke/trouble.nvim",
+        config = function()
+            require("plugins.config.trouble")
+        end
+    },
 
     -- Command fzf; noconf
     {
@@ -195,4 +200,12 @@ return {
     {
         "MunifTanjim/prettier.nvim",
     },
+
+    -- Linter
+    {
+        "mfussenegger/nvim-lint",
+        config = function()
+            require("plugins.config.nvim-lint")
+        end,
+    }
 }
