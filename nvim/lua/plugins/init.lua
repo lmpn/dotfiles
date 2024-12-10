@@ -190,11 +190,9 @@ return {
         ft = { "go", 'gomod' },
         build = ':lua require("go.install").update_all_sync()' -- if you need to install/update all binaries
     },
-    -- Linter
+
+    -- Prettier
     {
-        'dense-analysis/ale',
-        config = function()
-            require("plugins.config.ale")
-        end
+        "MunifTanjim/prettier.nvim",
     },
 }

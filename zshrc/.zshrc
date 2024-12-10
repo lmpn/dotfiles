@@ -80,3 +80,4 @@ f() { echo "$(find . -type f -not -path '*/.*' | fzf)" | pbcopy }
 fv() { nvim "$(find . -type f -not -path '*/.*' | fzf)" }
 
 export PATH="$PATH:~/.mybin"
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"

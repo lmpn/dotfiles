@@ -39,9 +39,8 @@ end
 local servers = {
     rust_analyzer = {},
     lua_ls = {},
-    html = {},
+    html = { filetypes = { "htmldjango", "html" } },
     cssls = {},
-    svelte = {},
     bashls = {},
     marksman = {},
     jsonls = {},
