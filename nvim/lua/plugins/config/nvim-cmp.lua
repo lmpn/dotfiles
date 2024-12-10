@@ -23,10 +23,15 @@ if not lspkind_status then
 end
 require('luasnip.loaders.from_vscode').lazy_load()
 
-
 vim.opt.completeopt = "menu,menuone,noselect"
 vim.opt.pumheight = 10 -- Max number of items to show
 
+
+local has_words_before = function()
+  unpack = unpack or table.unpack
+  local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+  return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+end
 
 cmp.setup {
   snippet = {
@@ -52,8 +57,12 @@ cmp.setup {
     ['<Tab>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
-      elseif require("luasnip").expand_or_jumpable() then
-        vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-expand-or-jump", true, true, true), "")
+      elseif vim.snippet.active({ direction = 1 }) then
+        vim.schedule(function()
+          vim.snippet.jump(1)
+        end)
+      elseif has_words_before() then
+        cmp.complete()
       else
         fallback()
       end
@@ -61,8 +70,10 @@ cmp.setup {
     ['<S-Tab>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_prev_item({ behavior = cmp.SelectBehavior.Select })
-      elseif require("luasnip").jumpable(-1) then
-        vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-jump-prev", true, true, true), "")
+      elseif vim.snippet.active({ direction = -1 }) then
+        vim.schedule(function()
+          vim.snippet.jump(-1)
+        end)
       else
         fallback()
       end
@@ -77,16 +88,3 @@ cmp.setup {
     { name = "path" },     -- file system paths
   },
 }
-
-cmp.setup.cmdline('/', {
-  mapping = cmp.mapping.preset.cmdline(),
-  sources = {
-    { name = 'buffer' }
-  }
-})
-
-cmp.setup.cmdline(':', {
-  sources = cmp.config.sources({
-    { name = 'cmdline' }
-  })
-})
